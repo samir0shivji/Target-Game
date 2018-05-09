@@ -71,6 +71,13 @@ public class Game extends JFrame implements ActionListener
         g.drawOval(50, 50, 100, 100);
         
     }
+    public void act() 
+    {
+ //   	addObject(new Target(), Target.getRandomNumber(getWidth(), Target.getRandomNumber(getHeight()));
+    }
+    
+    
+    
     public void actionPerformed(ActionEvent evt) 
     {
         if(evt.getSource()==button1)
