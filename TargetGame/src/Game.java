@@ -1,7 +1,9 @@
 import java.awt.*;          // access to Container
+
 import java.awt.event.*;
 import javax.swing.*;
     // access to WindowAdapter, WindowEvent
+
 
 /**
  * Write a description of class Game here.
