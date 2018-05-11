@@ -17,9 +17,9 @@ public class Target extends JFrame
 {
     private JRadioButton button;
     
-    public Target(Icon image)
+    public Target(String color)
     {
-        button = new JRadioButton(image, true);
+        button = new JRadioButton(image);
     }
     
     public JRadioButton getTarget()

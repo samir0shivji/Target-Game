@@ -17,6 +17,7 @@ public class Game extends JFrame implements ActionListener
     private Timer timer;
     private Font font;
     private Color color;
+    Target target;
     // instance variables - replace the example below with your own
     private int x;
     public static void main(String[] args)
@@ -35,12 +36,12 @@ public class Game extends JFrame implements ActionListener
         setLayout(new BorderLayout());
         JLabel background = new JLabel(new ImageIcon("background.png"));
         container.add(background);
-        ImageIcon icon = new ImageIcon("exit.jpg");
+        ImageIcon icon = new ImageIcon("quit.png");
         button1 = new JButton(icon);
         button1.addActionListener(this);
         
         background.add(button1);
-        button1.setBounds(1000, 530, 100, 100);
+        button1.setBounds(1080, 540, 130, 70);
         addKeyListener( new KeyHandler());
 
         addWindowListener(new java.awt.event.WindowAdapter() {
