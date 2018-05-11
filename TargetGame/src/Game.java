@@ -1,7 +1,7 @@
 import java.awt.*;          // access to Container
 import java.awt.event.*;    // access to WindowAdapter, WindowEvent
 import javax.swing.*; 
-
+import java.awt.Font.*;
 /**
  * Write a description of class Game here.
  * 
@@ -15,6 +15,8 @@ public class Game extends JFrame implements ActionListener
     private int counter;
     private int fishX, fishY;
     private Timer timer;
+    private Font font;
+    private Color color;
     // instance variables - replace the example below with your own
     private int x;
     public static void main(String[] args)
@@ -31,17 +33,14 @@ public class Game extends JFrame implements ActionListener
         Container container = getContentPane();
         container.setLayout( new BorderLayout());
         setLayout(new BorderLayout());
-        setContentPane(new JLabel(new ImageIcon("background.png")));
-     
-        label1 = new JLabel("Score");
-       
-       
-        JPanel panel = new JPanel(new GridLayout());
-        panel.add(label1);
-       
-        container.add(panel, BorderLayout.NORTH);
+        JLabel background = new JLabel(new ImageIcon("background.png"));
+        container.add(background);
+        ImageIcon icon = new ImageIcon("exit.jpg");
+        button1 = new JButton(icon);
+        button1.addActionListener(this);
         
-
+        background.add(button1);
+        button1.setBounds(1000, 530, 100, 100);
         addKeyListener( new KeyHandler());
 
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -50,9 +49,6 @@ public class Game extends JFrame implements ActionListener
                 }
             });
 
-        // initial location of fish
-        //         fishX = 300; 
-        //         fishY = 100;
 
        
         setSize(1240, 680);
@@ -67,8 +63,11 @@ public class Game extends JFrame implements ActionListener
     public void paint(Graphics g)
     {
         super.paint(g);
-        g.drawOval(50, 50, 100, 100);
-        
+        Font font = new Font( "Comic Sans MS", Font.BOLD, 80 );
+        g.setFont(font);
+        g.setColor(color.WHITE);
+        g.drawString("Score: ", 30, 632);
+        g.drawString("Time: ", 500, 632);
     }
     public void actionPerformed(ActionEvent evt) 
     {
@@ -171,3 +170,4 @@ public class Game extends JFrame implements ActionListener
 }
 
   
+
